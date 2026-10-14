@@ -1,5 +1,5 @@
 /** Canonical production origin (no trailing slash). */
-export const PRODUCTION_SITE_ORIGIN = "https://www.finara.co.id" as const;
+export const PRODUCTION_SITE_ORIGIN = "https://finara.co.id" as const;
 
 /** Override at build with `SITE_URL` (Docker `.env`, CI, local). */
 export const SITE_URL =

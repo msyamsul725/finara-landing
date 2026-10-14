@@ -22,7 +22,7 @@ Syarat ini melengkapi **Kebijakan Privasi Finara** (lihat `/privacy/`). Istilah 
 | **Alamat** | Wirausaha Lt. 1 Unit 104, Jl. HR Rasuna Said Kav. C-5, Kota Administrasi Jakarta Selatan, DKI Jakarta 12920, Indonesia |
 | **Surel dukungan & hukum** | digital@cloudnow.co.id |
 | **Telepon** | +62 816-676-515 |
-| **Situs web** | https://www.finara.co.id/ |
+| **Situs web** | https://finara.co.id/ |
 
 ---
 

@@ -34,7 +34,7 @@ const {
   eyebrow = "Transparansi untuk kepercayaan",
   metaPill = "Draf kebijakan",
   metaDate = "Tanggal berlaku: belum ditetapkan",
-  noindex = true,
+  noindex = false,
 } = Astro.props;
 
 const canonical = SITE_URL ? new URL(Astro.url.pathname, SITE_URL).href : undefined;
