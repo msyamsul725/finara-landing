@@ -71,10 +71,42 @@ Setelah `*.pages.dev` OK:
 
 ---
 
-## Update konten
+## Patch sendiri (update production)
 
-Push ke `main` → Pages rebuild otomatis.
+Setelah Pages + domain sudah terpasang sekali, **Anda tidak perlu VPS/Docker** — cukup repo + Cloudflare.
+
+### Alur singkat
+
+1. Edit di lokal (konten, style, legal, dll.).
+2. Verifikasi:
 
 ```bash
+npm run check
+npm run build
+```
+
+3. Commit & push ke **`main`**:
+
+```bash
+git add -A
+git commit -m "deskripsi perubahan"
 git push origin main
 ```
+
+4. Cloudflare → proyek **finara-landing** → **Deployments** — tunggu build **Success** (±2–5 menit).
+5. Cek https://finara.co.id/ (hard refresh atau incognito).
+
+### Jika build Pages gagal
+
+- Log deploy → biasanya `npm ci` / Node: pastikan env **`NODE_VERSION=22`**.
+- Canonical salah → env **`SITE_URL=https://finara.co.id`** (Production).
+- Retry: **Deployments** → **Retry deployment** atau push commit kosong:  
+  `git commit --allow-empty -m "retrigger pages" && git push`
+
+### Yang jarang perlu diubah lagi
+
+- Build command / output directory (kecuali migrasi framework).
+- DNS (kecuali pindah host atau ganti subdomain).
+- **`public/_redirects`** — sudah atur www → apex; jangan hapus kecuali sengaja.
+
+Repo: https://github.com/msyamsul725/finara-landing.git · branch produksi: **`main`**
