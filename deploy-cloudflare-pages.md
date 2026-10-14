@@ -35,8 +35,8 @@ Harus ada di `dist/`: `index.html`, `privacy/index.html`, `terms/index.html`, `s
 1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
 2. GitHub → akun **msyamsul725** → repo **finara-landing**.
 3. **Production branch:** `main`
-4. **Framework preset:** Astro
-5. **Build settings** (sesuaikan — repo memakai **npm**, bukan pnpm):
+4. **Framework preset:** *tidak dipilih* — UI Cloudflare saat ini langsung ke pengaturan build (tanpa pilih Astro/React/dll.).
+5. **Build settings** (repo memakai **npm**, bukan pnpm):
 
 | Field | Value |
 |-------|--------|
@@ -44,7 +44,7 @@ Harus ada di `dist/`: `index.html`, `privacy/index.html`, `terms/index.html`, `s
 | Build command | `npm run build` |
 | Preview command | `npx wrangler preview` |
 
-**Build output directory:** tidak perlu diisi — biarkan default preset **Astro** (Cloudflare otomatis pakai `dist`).
+Field **build output** / **output directory**: jika **tidak ada** di form, biarkan saja. Jika nanti muncul (versi UI lain), isi **`dist`** — itu folder hasil `npm run build`.
 
 6. **Environment variables** (Production + Preview):
 
