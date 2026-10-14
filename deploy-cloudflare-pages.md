@@ -1,7 +1,7 @@
 # Deploy Finara ke Cloudflare Pages
 
 **Domain produksi (canonical):** https://finara.co.id  
-**Redirect:** `www.finara.co.id` → `https://finara.co.id` (301, path + query) via `public/_redirects`  
+**Redirect www → apex:** atur di **Cloudflare Dashboard** (bukan `public/_redirects` — Workers/Pages hanya menerima URL relatif di file itu).  
 **Repo:** https://github.com/msyamsul725/finara-landing.git  
 **Branch produksi:** `main`
 
@@ -26,7 +26,7 @@ npm run build
 npx wrangler preview
 ```
 
-Harus ada di `dist/`: `index.html`, `privacy/index.html`, `terms/index.html`, `sitemap-index.xml`, `_redirects`.
+Harus ada di `dist/`: `index.html`, `privacy/index.html`, `terms/index.html`, `sitemap-index.xml`.
 
 ---
 
@@ -67,7 +67,14 @@ Setelah `*.pages.dev` OK:
    - **Hapus / ganti** A record lama ke `2.57.91.91` untuk `@` dan `www` (hanya record **web**; jangan ubah **MX**, **TXT** email/SPF/DKIM).
    - Ikuti petunjuk Pages (biasanya **CNAME** `www` → `<project>.pages.dev` dan **CNAME/flatten** apex `@` → Pages).
 
-3. Redirect **www → apex** sudah di **`public/_redirects`**; pastikan domain `www` tetap terpasang di Pages agar request sampai ke edge.
+3. **Redirect www → apex** (301, pertahankan path & query):
+
+   Cloudflare → **Rules** → **Redirect Rules** (atau **Bulk Redirects**) → contoh:
+
+   - If: hostname equals `www.finara.co.id`
+   - Then: dynamic redirect to `concat("https://finara.co.id", http.request.uri.path)` (query string: preserve)
+
+   Atau cukup pasang **hanya** custom domain `finara.co.id` di Pages dan arahkan DNS `www` ke redirect rule di atas.
 
 ---
 
@@ -119,6 +126,6 @@ git push origin main
 
 - Build / preview command (kecuali migrasi framework).
 - DNS (kecuali pindah host atau ganti subdomain).
-- **`public/_redirects`** — sudah atur www → apex; jangan hapus kecuali sengaja.
+- Redirect www → apex lewat **Redirect Rules** Cloudflare, bukan file `_redirects` di repo.
 
 Repo: https://github.com/msyamsul725/finara-landing.git · branch produksi: **`main`**
