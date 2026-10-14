@@ -9,15 +9,24 @@ Proyek ini **static Astro** (output `dist/`), **npm** + `package-lock.json` (buk
 
 ---
 
-## Build lokal (verifikasi)
+## Build & preview lokal
+
+| Langkah | Perintah |
+|---------|----------|
+| **Build** | `npm run build` |
+| **Preview (Cloudflare / Wrangler)** | `npx wrangler preview` (setelah build; butuh `wrangler login` untuk preview di edge) |
+| **Preview cepat (Astro)** | `npm run preview` — opsional, tanpa Wrangler |
+
+Verifikasi penuh sebelum push:
 
 ```bash
 npm ci
 npm run check
 npm run build
+npx wrangler preview
 ```
 
-Harus ada: `dist/index.html`, `dist/privacy/index.html`, `dist/terms/index.html`, `dist/sitemap-index.xml`, `dist/_redirects`.
+Harus ada di `dist/`: `index.html`, `privacy/index.html`, `terms/index.html`, `sitemap-index.xml`, `_redirects`.
 
 ---
 
@@ -33,6 +42,7 @@ Harus ada: `dist/index.html`, `dist/privacy/index.html`, `dist/terms/index.html`
 |-------|--------|
 | Path / Root directory | **`/`** (default — `package.json` di root repo) |
 | Build command | `npm run build` |
+| Preview command | `npx wrangler preview` |
 | Build output directory | `dist` |
 
 6. **Environment variables** (Production + Preview):
@@ -83,6 +93,7 @@ Setelah Pages + domain sudah terpasang sekali, **Anda tidak perlu VPS/Docker** �
 ```bash
 npm run check
 npm run build
+npx wrangler preview
 ```
 
 3. Commit & push ke **`main`**:
