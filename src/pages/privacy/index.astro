@@ -1,0 +1,473 @@
+---
+import FinaraLegalLayout from "../../layouts/FinaraLegalLayout.astro";
+import PrivacySidebar from "../../components/legal/PrivacySidebar.astro";
+import LegalTocLinks from "../../components/legal/LegalTocLinks.astro";
+import { privacyToc } from "../../data/privacy-toc";
+import { company } from "../../config/company";
+import { SITE_URL } from "../../config/site";
+
+const websiteUrl = SITE_URL ?? Astro.url.origin;
+---
+
+<FinaraLegalLayout
+  title="Kebijakan Privasi — Finara"
+  description="Kebijakan Privasi Finara: Catatan Keuangan — pengumpulan, penggunaan, penyimpanan, dan perlindungan data keuangan Anda."
+  breadcrumbCurrent="Kebijakan Privasi"
+  pageTitle="Kebijakan Privasi"
+  intro="Kebijakan ini menjelaskan bagaimana Finara: Catatan Keuangan mengelola informasi Anda. Data keuangan pribadi sangat privat—hanya Anda yang memahami total keuangan Anda, kecuali bagian yang Anda pilih bagikan di workspace bersama."
+  metaPill="Versi aplikasi 1.2.7"
+  metaDate="Terakhir diperbarui: 9 Oktober 2026"
+  noindex={false}
+>
+  <PrivacySidebar slot="sidebar" />
+
+  <details class="mobile-toc">
+    <summary>Daftar isi dokumen</summary>
+    <nav class="toc">
+      <LegalTocLinks items={privacyToc} />
+    </nav>
+  </details>
+
+  <div class="summary-box">
+    <div class="small-title">Ringkasan singkat</div>
+    <p>
+      <strong>Finara: Catatan Keuangan</strong> menyimpan catatan keuangan Anda dengan prinsip privasi
+      ketat: total dan detail keuangan pribadi hanya dapat Anda lihat, bukan pengguna lain atau publik.
+      Tanpa login, data utama tetap di perangkat. Dengan login Google/Apple, kami sinkronkan data ke
+      server untuk backup dan workspace bersama (hanya anggota yang Anda undang). Push notification memakai
+      Firebase. Analitik opsional dan tidak mencakup nominal transaksi.
+    </p>
+  </div>
+
+  <section class="legal-section" id="privacy-1">
+    <div class="section-title">
+      <span class="section-no">01</span>
+      <h2>Pendahuluan</h2>
+    </div>
+    <p>
+      Kebijakan Privasi ini menjelaskan bagaimana <strong>Finara: Catatan Keuangan</strong> (“<strong>Aplikasi</strong>”, “<strong>Finara</strong>”, “<strong>kami</strong>”) mengumpulkan, menggunakan, menyimpan, dan
+      melindungi informasi Anda saat Anda menggunakan aplikasi pencatatan keuangan Finara di perangkat
+      seluler.
+    </p>
+    <p>
+      Dengan mengunduh, mengakses, atau menggunakan Aplikasi, Anda menyetujui praktik yang dijelaskan
+      dalam kebijakan ini. Jika Anda tidak setuju, mohon hentikan penggunaan Aplikasi.
+    </p>
+    <p>
+      Privasi data pelanggan (pengguna) adalah prioritas kami. <strong>Catatan dan total keuangan pribadi
+        Anda bersifat sangat privat</strong>—hanya Anda sendiri yang dapat melihat gambaran keuangan
+      pribadi Anda di Aplikasi, kecuali informasi yang <strong>Anda sengaja bagikan</strong> dalam
+      workspace bersama dengan anggota yang Anda undang. Kami tidak menjual data keuangan Anda dan tidak
+      menampilkan total keuangan pribadi Anda kepada pengguna Finara lainnya.
+    </p>
+    <p><strong>Pengendali data (Data Controller):</strong></p>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <tbody>
+          <tr>
+            <th>Nama badan usaha / pengembang</th>
+            <td>{company.legalName}</td>
+          </tr>
+          <tr>
+            <th>Alamat</th>
+            <td>{company.address}</td>
+          </tr>
+          <tr>
+            <th>Surel privasi &amp; dukungan</th>
+            <td>
+              <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Situs web</th>
+            <td>
+              <a href={websiteUrl}>{websiteUrl}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="legal-section" id="privacy-2">
+    <div class="section-title">
+      <span class="section-no">02</span>
+      <h2>Ruang lingkup</h2>
+    </div>
+    <p>Kebijakan ini berlaku untuk:</p>
+    <ul class="topics">
+      <li>Aplikasi Finara (Android dan iOS);</li>
+      <li>
+        layanan backend yang mendukung akun, sinkronisasi cloud, dan workspace bersama (jika Anda login);
+      </li>
+      <li>
+        notifikasi push terkait undangan workspace, pengingat, dan fitur terkait (jika diaktifkan).
+      </li>
+    </ul>
+    <p>
+      Kebijakan ini <strong>tidak</strong> mengatur situs web atau layanan pihak ketiga yang Anda buka di
+      luar Aplikasi (misalnya halaman login Google atau Apple).
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-3">
+    <div class="section-title">
+      <span class="section-no">03</span>
+      <h2>Data yang kami kumpulkan</h2>
+    </div>
+    <h3>3.1 Data yang Anda berikan</h3>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Jenis data</th>
+            <th>Contoh</th>
+            <th>Kapan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Akun</strong></td>
+            <td>Nama, alamat surel, foto profil (dari Google atau Apple), identitas pengguna</td>
+            <td>Saat login dengan Google / Sign in with Apple</td>
+          </tr>
+          <tr>
+            <td><strong>Data keuangan</strong></td>
+            <td>Transaksi, dompet, kategori, anggaran, pengingat, transaksi berulang, catatan</td>
+            <td>Saat Anda mencatat di Aplikasi</td>
+          </tr>
+          <tr>
+            <td><strong>Workspace bersama</strong></td>
+            <td>Nama workspace, peran anggota, undangan</td>
+            <td>Saat Anda membuat atau bergabung workspace</td>
+          </tr>
+          <tr>
+            <td><strong>Preferensi</strong></td>
+            <td>Mode gelap, persetujuan analitik, persetujuan cadangan perangkat</td>
+            <td>Di Pengaturan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>3.2 Data yang dikumpulkan otomatis</h3>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Jenis data</th>
+            <th>Tujuan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Identitas instalasi perangkat</strong></td>
+            <td>Membedakan perangkat untuk sinkronisasi dan keamanan sesi</td>
+          </tr>
+          <tr>
+            <td><strong>Token sesi</strong> (access / refresh)</td>
+            <td>Menjaga Anda tetap login dengan aman</td>
+          </tr>
+          <tr>
+            <td><strong>Token push (FCM)</strong></td>
+            <td>Mengirim notifikasi terkait workspace dan fitur Aplikasi</td>
+          </tr>
+          <tr>
+            <td><strong>Log teknis &amp; laporan crash</strong></td>
+            <td>Diagnosa error tanpa nomor transaksi atau saldo (lihat bagian 4)</td>
+          </tr>
+          <tr>
+            <td><strong>Data analitik produk</strong> (jika Anda memberi persetujuan)</td>
+            <td>
+              Memahami penggunaan fitur—<strong>bukan</strong> nominal, saldo, atau isi catatan transaksi
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Zona waktu &amp; locale</strong></td>
+            <td>Format tanggal, pengingat, dan tampilan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>3.3 Mode tamu (tanpa login)</h3>
+    <p>
+      Anda dapat menggunakan Aplikasi <strong>tanpa akun</strong>. Data keuangan tamu disimpan
+      <strong>secara lokal di perangkat</strong> Anda. Tanpa login, data tersebut <strong>tidak</strong>
+      diunggah ke server kami kecuali Anda nanti login dan memilih untuk mengimpor atau sinkronkan sesuai
+      alur di Aplikasi.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-4">
+    <div class="section-title">
+      <span class="section-no">04</span>
+      <h2>Cara kami menggunakan data</h2>
+    </div>
+    <p>Kami menggunakan data untuk:</p>
+    <ol>
+      <li>
+        <strong>Menyediakan layanan inti</strong> — pencatatan, laporan, dompet, anggaran, pengingat, dan
+        workspace bersama.
+      </li>
+      <li>
+        <strong>Autentikasi dan keamanan</strong> — verifikasi identitas, refresh token, pencegahan
+        penyalahgunaan akun.
+      </li>
+      <li>
+        <strong>Sinkronisasi cloud</strong> (pengguna login) — menyelaraskan data antar perangkat Anda dan
+        anggota workspace yang sama.
+      </li>
+      <li>
+        <strong>Notifikasi</strong> — undangan workspace, pengingat jadwal, dan pesan terkait fitur (sesuai
+        izin OS).
+      </li>
+      <li>
+        <strong>Peningkatan produk</strong> — analitik <strong>hanya setelah persetujuan Anda</strong>,
+        dengan kebijakan internal yang <strong>melarang</strong> mengirim nominal, saldo, catatan
+        transaksi, kredensial, atau token ke layanan analitik.
+      </li>
+      <li>
+        <strong>Stabilitas</strong> — laporan crash/error teknis yang disaring agar tidak memuat data
+        keuangan sensitif.
+      </li>
+    </ol>
+    <p>Kami <strong>tidak</strong> menjual data pribadi Anda kepada pihak ketiga untuk iklan profil.</p>
+  </section>
+
+  <section class="legal-section" id="privacy-5">
+    <div class="section-title">
+      <span class="section-no">05</span>
+      <h2>Dasar pemrosesan (Indonesia)</h2>
+    </div>
+    <p>Sesuai praktik perlindungan data pribadi yang berlaku di Indonesia, pemrosesan kami didasarkan pada:</p>
+    <ul class="topics">
+      <li>
+        <strong>Pelaksanaan layanan</strong> yang Anda minta (mencatat keuangan, sync, workspace);
+      </li>
+      <li>
+        <strong>Persetujuan</strong> — analitik produk, notifikasi push (izin OS), dan opsi
+        cadangan/sinkronisasi di mana Aplikasi meminta persetujuan eksplisit;
+      </li>
+      <li>
+        <strong>Kepentingan sah</strong> — keamanan, pencegahan fraud, dan perbaikan stabilitas Aplikasi.
+      </li>
+    </ul>
+  </section>
+
+  <section class="legal-section" id="privacy-6">
+    <div class="section-title">
+      <span class="section-no">06</span>
+      <h2>Penyimpanan dan retensi</h2>
+    </div>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Lokasi</th>
+            <th>Isi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Perangkat Anda</strong></td>
+            <td>Database lokal (SQLite/Drift), preferensi, token sesi di penyimpanan aman perangkat</td>
+          </tr>
+          <tr>
+            <td><strong>Server kami</strong></td>
+            <td>Akun, data tersinkronkan workspace, metadata sync, token push terdaftar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Data disimpan selama akun aktif atau selama diperlukan untuk layanan. Anda dapat meminta penghapusan
+      akun dan data terkait (lihat bagian 9). Data lokal di perangkat dapat Anda hapus dengan menghapus
+      data Aplikasi atau uninstall.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-7">
+    <div class="section-title">
+      <span class="section-no">07</span>
+      <h2>Keamanan</h2>
+    </div>
+    <p>Kami menerapkan langkah wajar, antara lain:</p>
+    <ul class="topics">
+      <li>enkripsi penyimpanan aman untuk token di perangkat;</li>
+      <li>komunikasi dengan server melalui HTTPS;</li>
+      <li>pembatasan akses server dan prinsip least privilege;</li>
+      <li>desain analitik yang menolak parameter sensitif terkait keuangan.</li>
+    </ul>
+    <p>
+      Tidak ada metode transmisi atau penyimpanan yang 100% aman; kami berupaya meminimalkan risiko.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-8">
+    <div class="section-title">
+      <span class="section-no">08</span>
+      <h2>Berbagi data dengan pihak ketiga</h2>
+    </div>
+    <p>Kami dapat memproses data melalui penyedia layanan yang membantu operasi Aplikasi:</p>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Pihak ketiga</th>
+            <th>Peran</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Google (Sign-In, Firebase Cloud Messaging)</strong></td>
+            <td>Login Google; pengiriman push (Android/iOS sesuai konfigurasi)</td>
+          </tr>
+          <tr>
+            <td><strong>Apple (Sign in with Apple)</strong></td>
+            <td>Login Apple</td>
+          </tr>
+          <tr>
+            <td><strong>Penyedia hosting / cloud backend</strong></td>
+            <td>
+              API akun, sinkronisasi, workspace <em>[sesuaikan nama penyedia jika dipublikasikan]</em>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Shorebird</strong> (jika build production memakainya)</td>
+            <td>Pembaruan kode Aplikasi over-the-air</td>
+          </tr>
+          <tr>
+            <td><strong>Layanan analitik</strong> (jika aktif &amp; Anda setuju)</td>
+            <td>Statistik penggunaan fitur non-finansial</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Pihak ketiga hanya memproses data sesuai instruksi kami dan kontrak pemrosesan yang berlaku.
+      Kebijakan privasi mereka juga berlaku untuk komponen yang mereka kelola (misalnya
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+        >Kebijakan Privasi Google</a
+      >,
+      <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer"
+        >Privasi Apple</a
+      >).
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-9">
+    <div class="section-title">
+      <span class="section-no">09</span>
+      <h2>Hak Anda</h2>
+    </div>
+    <p>Anda berhak, sesuai hukum yang berlaku:</p>
+    <ul class="topics">
+      <li><strong>mengakses</strong> salinan data pribadi yang kami simpan tentang Anda;</li>
+      <li><strong>memperbaiki</strong> data akun yang tidak akurat;</li>
+      <li>
+        <strong>menarik persetujuan</strong> analitik atau notifikasi (melalui Pengaturan Aplikasi / izin
+        OS);
+      </li>
+      <li>
+        <strong>meminta penghapusan</strong> akun dan data server terkait — hubungi
+        <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>;
+      </li>
+      <li>
+        <strong>membatasi</strong> pemrosesan tertentu, termasuk berhenti login dan hanya memakai mode
+        lokal.
+      </li>
+    </ul>
+    <p>
+      Permintaan hak privasi kami jawab dalam jangka waktu wajar (umumnya hingga 30 hari kerja) setelah
+      verifikasi identitas.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-10">
+    <div class="section-title">
+      <span class="section-no">10</span>
+      <h2>Anak-anak</h2>
+    </div>
+    <p>
+      Aplikasi tidak ditujukan untuk anak di bawah <strong>13 tahun</strong> (atau usia minimum setempat).
+      Kami tidak dengan sengaja mengumpulkan data dari anak. Jika Anda yakin anak memberikan data kepada
+      kami, hubungi kami agar data tersebut dihapus.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-11">
+    <div class="section-title">
+      <span class="section-no">11</span>
+      <h2>Transfer internasional</h2>
+    </div>
+    <p>
+      Server atau penyedia layanan kami dapat berada di luar Indonesia. Jika transfer dilakukan, kami
+      menerapkan safeguard yang wajar (kontrak, enkripsi, penilaian risiko) sesuai ketentuan yang berlaku.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-12">
+    <div class="section-title">
+      <span class="section-no">12</span>
+      <h2>Perubahan kebijakan</h2>
+    </div>
+    <p>
+      Kami dapat memperbarui Kebijakan Privasi ini. Perubahan material akan diberitahukan melalui Aplikasi,
+      surel, atau situs web. Tanggal “Terakhir diperbarui” di bagian atas akan disesuaikan. Penggunaan
+      berkelanjutan setelah perubahan berarti Anda menerima versi terbaru.
+    </p>
+  </section>
+
+  <section class="legal-section" id="privacy-13">
+    <div class="section-title">
+      <span class="section-no">13</span>
+      <h2>Hubungi kami</h2>
+    </div>
+    <p>Pertanyaan, keluhan, atau permintaan hak privasi:</p>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <tbody>
+          <tr>
+            <th>Surel</th>
+            <td>
+              <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Telepon</th>
+            <td>
+              <a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Alamat surat</th>
+            <td>{company.address}</td>
+          </tr>
+          <tr>
+            <th>Pengembang (kontak alternatif)</th>
+            <td>
+              <a href={`mailto:${company.developerEmail}`}>{company.developerEmail}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <h3>Ada yang ingin kamu tanyakan?</h3>
+    <p>Pertanyaan, keluhan, atau permintaan hak privasi terkait Kebijakan Privasi Finara.</p>
+    <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true">✉</span>
+      <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+    </div>
+    <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true">☎</span>
+      <a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a>
+    </div>
+  </div>
+
+  <div class="end-note">
+    <span>Atur Bersama, Tumbuh Bersama.</span>
+    <a href="#main">Kembali ke atas ↑</a>
+  </div>
+</FinaraLegalLayout>

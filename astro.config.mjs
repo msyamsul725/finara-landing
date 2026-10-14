@@ -1,14 +1,17 @@
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import icon from "astro-icon";
+
+const site = process.env.SITE_URL;
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
-  integrations: [mdx(), sitemap(), icon()],
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  ...(site ? { site } : {}),
+  integrations: [
+    sitemap({
+      filter: (page) => {
+        if (!site) return false;
+        return page === `${site}/` || page === site;
+      },
+    }),
+  ],
 });

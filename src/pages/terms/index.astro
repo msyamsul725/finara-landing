@@ -1,0 +1,532 @@
+---
+import FinaraLegalLayout from "../../layouts/FinaraLegalLayout.astro";
+import TermsSidebar from "../../components/legal/TermsSidebar.astro";
+import LegalTocLinks from "../../components/legal/LegalTocLinks.astro";
+import { termsToc } from "../../data/terms-toc";
+import { company } from "../../config/company";
+import { SITE_URL } from "../../config/site";
+
+const websiteUrl = SITE_URL ?? Astro.url.origin;
+---
+
+<FinaraLegalLayout
+  title="Syarat & Ketentuan — Finara"
+  description="Syarat dan Ketentuan Layanan Finara: Catatan Keuangan — ketentuan penggunaan aplikasi pencatatan keuangan."
+  breadcrumbCurrent="Syarat & Ketentuan"
+  pageTitle="Syarat & Ketentuan"
+  intro="Syarat ini mengatur akses dan penggunaan Finara: Catatan Keuangan. Dengan menggunakan Aplikasi, Anda menyetujui ketentuan berikut beserta Kebijakan Privasi kami."
+  metaPill="Versi aplikasi 1.2.7"
+  metaDate="Terakhir diperbarui: 9 Oktober 2026"
+  noindex={false}
+>
+  <TermsSidebar slot="sidebar" />
+
+  <details class="mobile-toc">
+    <summary>Daftar isi dokumen</summary>
+    <nav class="toc">
+      <LegalTocLinks items={termsToc} />
+    </nav>
+  </details>
+
+  <div class="summary-box">
+    <div class="small-title">Ringkasan singkat (toko aplikasi)</div>
+    <p>
+      Dengan memakai <strong>Finara</strong>, Anda setuju Syarat ini. Finara membantu mencatat keuangan;
+      bukan bank atau penasihat investasi. Data tamu ada di perangkat; login, sinkronisasi, dan workspace
+      mengikuti <a href="/privacy/">Kebijakan Privasi</a>. Premium dan trial tunduk harga di Aplikasi dan
+      kebijakan toko. Hubungi <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>.
+    </p>
+  </div>
+
+  <section class="legal-section" id="terms-1">
+    <div class="section-title">
+      <span class="section-no">01</span>
+      <h2>Pendahuluan</h2>
+    </div>
+    <p>
+      Syarat dan Ketentuan Layanan ini (“<strong>Syarat</strong>”) mengatur akses dan penggunaan Anda
+      terhadap aplikasi <strong>Finara: Catatan Keuangan</strong> (“<strong>Aplikasi</strong>”) serta
+      layanan terkait yang kami sediakan (“<strong>Layanan</strong>”, “<strong>kami</strong>”).
+    </p>
+    <p>
+      Dengan mengunduh, mendaftar, login, atau menggunakan Aplikasi, Anda menyatakan telah membaca,
+      memahami, dan <strong>menyetujui</strong> Syarat ini. Jika Anda tidak setuju, jangan gunakan
+      Aplikasi.
+    </p>
+    <p>
+      Syarat ini melengkapi <a href="/privacy/">Kebijakan Privasi Finara</a>. Istilah yang tidak
+      didefinisikan di sini mengikuti Kebijakan Privasi.
+    </p>
+    <p><strong>Penyedia Layanan:</strong></p>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <tbody>
+          <tr>
+            <th>Nama badan usaha / pengembang</th>
+            <td>{company.legalName}</td>
+          </tr>
+          <tr>
+            <th>Alamat</th>
+            <td>{company.address}</td>
+          </tr>
+          <tr>
+            <th>Surel dukungan &amp; hukum</th>
+            <td>
+              <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Telepon</th>
+            <td>
+              <a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Situs web</th>
+            <td>
+              <a href={websiteUrl}>{websiteUrl}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="legal-section" id="terms-2">
+    <div class="section-title">
+      <span class="section-no">02</span>
+      <h2>Definisi</h2>
+    </div>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <thead>
+          <tr>
+            <th>Istilah</th>
+            <th>Arti</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pengguna</strong></td>
+            <td>Orang yang mengakses Aplikasi, termasuk tamu tanpa akun dan pengguna terdaftar.</td>
+          </tr>
+          <tr>
+            <td><strong>Akun</strong></td>
+            <td>Identitas yang dibuat setelah login (misalnya via Google atau Apple).</td>
+          </tr>
+          <tr>
+            <td><strong>Data Perangkat / mode tamu</strong></td>
+            <td>Catatan keuangan yang disimpan hanya di perangkat, tanpa login.</td>
+          </tr>
+          <tr>
+            <td><strong>Workspace</strong></td>
+            <td>Ruang data keuangan, termasuk workspace pribadi dan workspace bersama.</td>
+          </tr>
+          <tr>
+            <td><strong>Premium</strong></td>
+            <td
+              >Paket berbayar atau trial yang membuka fitur kolaborasi dan sinkronisasi lanjutan sesuai
+              penawaran di Aplikasi.</td
+            >
+          </tr>
+          <tr>
+            <td><strong>Konten Pengguna</strong></td>
+            <td>Data yang Anda input (transaksi, kategori, catatan, dll.) dan metadata terkait.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="legal-section" id="terms-3">
+    <div class="section-title">
+      <span class="section-no">03</span>
+      <h2>Deskripsi Layanan</h2>
+    </div>
+    <p>
+      Finara adalah aplikasi <strong>pencatatan dan pengelolaan keuangan pribadi/keluarga</strong> dengan
+      pendekatan <em>local-first</em>: data utama dapat disimpan di perangkat Anda. Setelah login, Layanan
+      dapat menyinkronkan data ke server kami agar tersedia di perangkat lain dan mendukung
+      <strong>workspace bersama</strong> (undangan anggota, peran seperti pemilik, anggota, atau pengamat).
+    </p>
+    <p>
+      Fitur dapat berubah seiring pembaruan Aplikasi (termasuk pembaruan over-the-air jika build production
+      memakai Shorebird). Kami berupaya menjaga ketersediaan Layanan, tetapi <strong>tidak menjamin</strong>
+      Layanan bebas gangguan, tanpa error, atau selalu tersedia.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-4">
+    <div class="section-title">
+      <span class="section-no">04</span>
+      <h2>Bukan layanan keuangan regulasi</h2>
+    </div>
+    <p><strong>PENTING:</strong></p>
+    <ul class="topics">
+      <li
+        >Finara <strong>bukan</strong> bank, lembaga pembiayaan, buku kas resmi, penasihat investasi, atau
+        penyedia jasa keuangan berizin, kecuali jika kami nyatakan secara terpisah dan resmi.</li
+      >
+      <li
+        >Aplikasi <strong>tidak</strong> mengeksekusi transfer uang, pembayaran antar rekening, atau
+        transaksi perbankan atas nama Anda.</li
+      >
+      <li
+        >Angka saldo, laporan, dan ringkasan bersifat <strong>informatif</strong> berdasarkan data yang
+        <strong>Anda</strong> masukkan; tanggung jawab keakuratan data ada pada Pengguna.</li
+      >
+      <li
+        >Keputusan keuangan Anda (belanja, investasi, pajak, dll.) tetap menjadi tanggung jawab Anda
+        sendiri; pertimbangkan konsultasi profesional jika diperlukan.</li
+      >
+    </ul>
+  </section>
+
+  <section class="legal-section" id="terms-5">
+    <div class="section-title">
+      <span class="section-no">05</span>
+      <h2>Kelayakan dan akun</h2>
+    </div>
+    <ol >
+      <li
+        >Anda menyatakan berusia minimal <strong>13 tahun</strong> (atau usia minimum setempat) dan mampu
+        mengikatkan diri secara hukum, atau menggunakan Aplikasi di bawah pengawasan wali yang sah.</li
+      >
+      <li
+        >Login melalui <strong>Google</strong> atau <strong>Sign in with Apple</strong> tunduk juga pada
+        ketentuan penyedia identitas tersebut.</li
+      >
+      <li
+        >Anda bertanggung jawab menjaga keamanan perangkat dan sesi Akun. Segera hubungi kami jika Anda
+        curiga Akun disalahgunakan.</li
+      >
+      <li>Informasi Akun harus benar dan mutakhir sejauh relevan dengan Layanan.</li>
+    </ol>
+  </section>
+
+  <section class="legal-section" id="terms-6">
+    <div class="section-title">
+      <span class="section-no">06</span>
+      <h2>Mode tamu dan sinkronisasi</h2>
+    </div>
+    <ul class="topics">
+      <li
+        >Tanpa login, Konten Pengguna dapat disimpan <strong>hanya di perangkat</strong>. Kehilangan
+        perangkat atau penghapusan data Aplikasi dapat <strong>menghapus permanen</strong> data tamu jika
+        tidak dicadangkan oleh Anda sendiri.</li
+      >
+      <li
+        >Login dan/atau persetujuan fitur cadangan/sinkronisasi (sesuai alur di Aplikasi) dapat
+        mengunggah atau menyelaraskan data ke server kami.</li
+      >
+      <li
+        >Anda memahami bahwa sinkronisasi bergantung pada koneksi internet, versi Aplikasi, dan kebijakan
+        workspace.</li
+      >
+    </ul>
+  </section>
+
+  <section class="legal-section" id="terms-7">
+    <div class="section-title">
+      <span class="section-no">07</span>
+      <h2>Workspace bersama dan peran</h2>
+    </div>
+    <ol >
+      <li
+        >Pemilik atau pengelola workspace dapat <strong>mengundang</strong> anggota dan menetapkan peran
+        (misalnya dapat mencatat transaksi atau <strong>hanya melihat</strong> sebagai pengamat).</li
+      >
+      <li
+        >Anggota workspace bersama dapat <strong>melihat</strong> data keuangan workspace sesuai peran
+        yang diberikan. Jangan bergabung ke workspace jika Anda tidak percaya pemilik atau anggota lain.</li
+      >
+      <li
+        >Anda tidak boleh membagikan undangan atau akses workspace untuk tujuan melanggar hukum, spam,
+        atau penyalahgunaan.</li
+      >
+      <li
+        >Fitur workspace bersama lanjutan dapat memerlukan <strong>Finara Premium</strong> atau masa
+        trial; batas fitur ditampilkan di Aplikasi.</li
+      >
+    </ol>
+  </section>
+
+  <section class="legal-section" id="terms-8">
+    <div class="section-title">
+      <span class="section-no">08</span>
+      <h2>Paket Premium, trial, dan pembayaran</h2>
+    </div>
+    <ol >
+      <li
+        >Harga, durasi trial, dan manfaat Premium dijelaskan di layar Aplikasi dan/atau halaman pembayaran
+        (Google Play / App Store).</li
+      >
+      <li
+        ><strong>Pembayaran berulang</strong> (jika ada) diperpanjang otomatis kecuali Anda membatalkan
+        melalui toko aplikasi atau metode pembayaran yang berlaku <strong>sebelum</strong> periode
+        berikutnya.</li
+      >
+      <li
+        ><strong>Pengembalian dana</strong> mengikuti kebijakan <strong>Google Play</strong>,
+        <strong>Apple App Store</strong>, atau kebijakan pembayaran pihak ketiga yang Anda gunakan,
+        kecuali diwajibkan lain oleh hukum.</li
+      >
+      <li
+        >Kami dapat mengubah harga atau fitur Premium dengan pemberitahuan wajar; perubahan biasanya
+        berlaku untuk periode langganan berikutnya.</li
+      >
+      <li
+        >Setelah Premium berakhir, fitur berbayar dapat dinonaktifkan; data lokal yang sudah ada umumnya
+        tetap dapat diakses sesuai desain Aplikasi, kecuali dinyatakan lain di Aplikasi.</li
+      >
+    </ol>
+  </section>
+
+  <section class="legal-section" id="terms-9">
+    <div class="section-title">
+      <span class="section-no">09</span>
+      <h2>Konten Pengguna dan lisensi</h2>
+    </div>
+    <ol >
+      <li><strong>Anda</strong> tetap memiliki hak atas Konten Pengguna yang Anda buat.</li>
+      <li
+        >Dengan menggunakan Layanan yang melibatkan server (login, sync, workspace bersama), Anda memberi
+        kami <strong
+          >lisensi terbatas, worldwide, non-eksklusif, dan dapat disublisensikan</strong
+        > untuk menyimpan, memproses, menampilkan kembali, dan mensinkronkan Konten Pengguna <strong
+          >hanya</strong
+        > guna menyediakan Layanan dan sebagaimana dijelaskan di Kebijakan Privasi.</li
+      >
+      <li
+        >Lisensi berakhir ketika Anda menghapus data yang dapat dihapus atau menutup Akun, kecuali salinan
+        cadangan teknis disimpan sementara sesuai kebijakan retensi kami.</li
+      >
+    </ol>
+  </section>
+
+  <section class="legal-section" id="terms-10">
+    <div class="section-title">
+      <span class="section-no">10</span>
+      <h2>Perilaku yang dilarang</h2>
+    </div>
+    <p>Anda <strong>tidak boleh</strong>:</p>
+    <ul class="topics">
+      <li>melanggar hukum atau hak pihak ketiga;</li>
+      <li>mengunggah malware, spam, atau konten yang menyesatkan, difamasi, atau pornografi anak;</li>
+      <li>mencoba mengakses server, Akun, atau workspace orang lain tanpa izin;</li>
+      <li
+        >melakukan reverse engineering, scraping massal, atau gangguan (DoS) terhadap Layanan, kecuali
+        diizinkan hukum;</li
+      >
+      <li>menggunakan Aplikasi untuk pencucian uang, penipuan, atau kegiatan keuangan ilegal;</li>
+      <li>menjual kembali atau menyewakan Aplikasi tanpa izin tertulis kami.</li>
+    </ul>
+    <p>
+      Pelanggaran dapat mengakibatkan <strong>penangguhan atau penghapusan</strong> Akun dan, jika perlu,
+      laporan kepada otoritas.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-11">
+    <div class="section-title">
+      <span class="section-no">11</span>
+      <h2>Kekayaan intelektual Finara</h2>
+    </div>
+    <p>
+      Nama <strong>Finara</strong>, logo, desain antarmuka, kode, dan materi Layanan (selain Konten
+      Pengguna) dilindungi hukum. Kami memberi Anda lisensi <strong
+        >pribadi, non-komersial, tidak dapat dialihkan, dan dapat dicabut</strong
+      > untuk menggunakan Aplikasi sesuai Syarat ini. Anda tidak memperoleh hak kepemilikan atas merek atau
+      kode kami.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-12">
+    <div class="section-title">
+      <span class="section-no">12</span>
+      <h2>Pembaruan Aplikasi</h2>
+    </div>
+    <p>
+      Kami dapat merilis pembaruan wajib untuk keamanan, kepatuhan, atau fungsi. Anda setuju menerima
+      pembaruan tersebut. Versi lama dapat berhenti didukung. Pembaruan kode (misalnya via Shorebird) tetap
+      tunduk Syarat ini.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-13">
+    <div class="section-title">
+      <span class="section-no">13</span>
+      <h2>Penafian jaminan</h2>
+    </div>
+    <p class="legal-caps">
+      SEJAUH DIIZINKAN HUKUM, LAYANAN DISEDIAKAN <strong>“SEBAGAIMANA ADANYA”</strong> DAN <strong
+        >“SEBAGAI TERSEDIA”</strong
+      >, TANPA JAMINAN TERSURAT MAUPUN TERSIRAT, TERMASUK JAMINAN KELAYAKAN JUAL, KESESUAIAN TUJUAN
+      TERTENTU, DAN NON-PELANGGARAN.
+    </p>
+    <p>
+      Kami tidak menjamin bahwa perhitungan, laporan, atau pengingat <strong>selalu akurat</strong> atau
+      <strong>tepat waktu</strong>; itu bergantung pada input Anda, zona waktu perangkat, dan faktor teknis
+      lain.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-14">
+    <div class="section-title">
+      <span class="section-no">14</span>
+      <h2>Batas tanggung jawab</h2>
+    </div>
+    <p class="legal-caps">SEJAUH DIIZINKAN HUKUM:</p>
+    <ol >
+      <li
+        >Kami <strong>tidak bertanggung jawab</strong> atas kerugian tidak langsung, insidental, khusus,
+        konsekuensial, atau hilangnya keuntungan, data (termasuk kegagalan cadangan yang tidak Anda lakukan),
+        atau goodwill.</li
+      >
+      <li
+        ><strong>Total tanggung jawab</strong> kami atas klaim terkait Layanan dalam periode <strong
+          >12 (dua belas) bulan</strong
+        > terakhir tidak melebihi jumlah yang <strong>Anda bayarkan</strong> kepada kami untuk Premium
+        dalam periode tersebut, atau <strong>Rp500.000</strong> jika Anda hanya menggunakan versi gratis—mana
+        yang lebih besar, kecuali hukum setempat melarang pembatasan tersebut.</li
+      >
+    </ol>
+    <p>
+      Hak konsumen berdasarkan <strong>Undang-Undang Perlindungan Konsumen</strong> dan peraturan terkait
+      <strong>tetap berlaku</strong> sejauh tidak dapat dikecualikan.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-15">
+    <div class="section-title">
+      <span class="section-no">15</span>
+      <h2>Ganti rugi</h2>
+    </div>
+    <p>
+      Anda setuju membela dan membebaskan kami (termasuk direksi, karyawan, dan mitra) dari klaim, kerugian,
+      dan biaya (termasuk biaya hukum wajar) yang timbul dari (a) Konten Pengguna Anda, (b) pelanggaran
+      Syarat, atau (c) pelanggaran hukum atau hak pihak ketiga oleh Anda.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-16">
+    <div class="section-title">
+      <span class="section-no">16</span>
+      <h2>Penghentian</h2>
+    </div>
+    <ul class="topics">
+      <li
+        ><strong>Anda</strong> dapat berhenti kapan saja dengan berhenti menggunakan Aplikasi, logout,
+        dan/atau menghapus Akun sesuai fitur atau permintaan ke <a href={`mailto:${company.supportEmail}`}
+          >{company.supportEmail}</a
+        >.</li
+      >
+      <li
+        ><strong>Kami</strong> dapat menangguhkan atau mengakhiri akses jika Anda melanggar Syarat, jika
+        diwajibkan hukum, atau jika Layanan dihentikan dengan pemberitahuan wajar.</li
+      >
+      <li
+        >Ketentuan yang menurut sifatnya harus tetap berlaku (misalnya penafian, batas tanggung jawab,
+        hukum yang berlaku) tetap berlaku setelah penghentian.</li
+      >
+    </ul>
+  </section>
+
+  <section class="legal-section" id="terms-17">
+    <div class="section-title">
+      <span class="section-no">17</span>
+      <h2>Hukum yang berlaku dan sengketa</h2>
+    </div>
+    <p>
+      Syarat ini tunduk pada <strong>hukum Republik Indonesia</strong>, tanpa mengabaikan aturan hukum
+      privasi wajib di yurisdiksi Anda jika Anda pengguna di luar Indonesia.
+    </p>
+    <p>
+      Sengketa akan diselesaikan terlebih dahulu secara <strong>musyawarah</strong> dalam <strong
+        >30 (tiga puluh) hari</strong
+      >. Jika tidak tercapai, sengketa diserahkan ke <strong>Pengadilan Negeri Jakarta Selatan</strong>,
+      kecuali Anda dan kami sepakat arbitrase.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-18">
+    <div class="section-title">
+      <span class="section-no">18</span>
+      <h2>Perubahan Syarat</h2>
+    </div>
+    <p>
+      Kami dapat mengubah Syarat. Perubahan material akan diberitahukan melalui Aplikasi, surel, atau situs
+      web. Tanggal “Terakhir diperbarui” akan disesuaikan. Penggunaan berkelanjutan setelah tanggal berlaku
+      dianggap sebagai penerimaan, kecuali hukum mengharuskan persetujuan eksplisit.
+    </p>
+  </section>
+
+  <section class="legal-section" id="terms-19">
+    <div class="section-title">
+      <span class="section-no">19</span>
+      <h2>Ketentuan lain</h2>
+    </div>
+    <ul class="topics">
+      <li
+        ><strong>Keterpisahan:</strong> Jika satu ketentuan tidak sah, ketentuan lain tetap berlaku.</li
+      >
+      <li
+        ><strong>Pengalihan:</strong> Anda tidak boleh mengalihkan hak tanpa izin kami; kami dapat
+        mengalihkan Layanan dalam merger atau akuisisi dengan pemberitahuan.</li
+      >
+      <li
+        ><strong>Bahasa:</strong> Versi <strong>Bahasa Indonesia</strong> berlaku; terjemahan lain (jika ada)
+        hanya untuk kenyamanan.</li
+      >
+    </ul>
+  </section>
+
+  <section class="legal-section" id="terms-20">
+    <div class="section-title">
+      <span class="section-no">20</span>
+      <h2>Hubungi kami</h2>
+    </div>
+    <div class="legal-table-wrap">
+      <table class="legal-table">
+        <tbody>
+          <tr>
+            <th>Dukungan produk</th>
+            <td>
+              <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Hal-hal hukum &amp; Syarat</th>
+            <td>
+              <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Telepon</th>
+            <td>
+              <a href={`tel:${company.phone.replace(/\s/g, "")}`}>{company.phone}</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Alamat surat</th>
+            <td>{company.address}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="contact-box">
+    <h3>Ada yang ingin kamu tanyakan?</h3>
+    <p>Hubungi kami untuk pertanyaan seputar Syarat &amp; Ketentuan atau penggunaan Finara.</p>
+    <div class="contact-detail">
+      <span class="contact-icon" aria-hidden="true">✉</span>
+      <a href={`mailto:${company.supportEmail}`}>{company.supportEmail}</a>
+    </div>
+  </div>
+
+  <div class="end-note">
+    <span>Atur Bersama, Tumbuh Bersama.</span>
+    <a href="#main">Kembali ke atas ↑</a>
+  </div>
+</FinaraLegalLayout>

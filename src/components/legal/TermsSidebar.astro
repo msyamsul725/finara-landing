@@ -1,0 +1,12 @@
+---
+import LegalTocLinks from "./LegalTocLinks.astro";
+import { termsToc } from "../../data/terms-toc";
+---
+
+<aside class="side" aria-label="Daftar isi Syarat &amp; Ketentuan">
+  <div class="side-heading">Dalam halaman ini</div>
+  <nav class="toc">
+    <LegalTocLinks items={termsToc} />
+  </nav>
+  <a class="side-other" href="/privacy/">Baca Kebijakan Privasi <span aria-hidden="true">↗</span></a>
+</aside>

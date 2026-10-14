@@ -1,0 +1,22 @@
+---
+export interface TocItem {
+  id: string;
+  num: string;
+  label: string;
+}
+
+interface Props {
+  items: readonly TocItem[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+  items.map((item) => (
+    <a href={`#${item.id}`}>
+      <span>{item.num}</span>
+      {item.label}
+    </a>
+  ))
+}

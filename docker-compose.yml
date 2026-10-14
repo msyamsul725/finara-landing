@@ -1,0 +1,10 @@
+services:
+  finara:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SITE_URL: ${SITE_URL:-}
+    ports:
+      - "8080:80"
+    restart: unless-stopped

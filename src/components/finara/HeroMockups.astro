@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import finaraReport from "../../assets/images/finara-report.jpg";
+import finaraHome from "../../assets/images/finara-home.jpg";
+---
+
+<div
+  class="visual"
+  aria-label="Preview Finara dengan screenshot asli Home dan Laporan serta ilustrasi desktop"
+>
+  <div class="orbit"><i class="dot"></i></div>
+  <div class="desktop-back">
+    <div class="desk-head">Ringkasan keuangan</div>
+    <div class="desk-chart">
+      <i style="height:30%"></i>
+      <i style="height:65%"></i>
+      <i style="height:45%"></i>
+      <i style="height:85%"></i>
+      <i style="height:60%"></i>
+      <i style="height:95%"></i>
+      <i style="height:70%"></i>
+    </div>
+  </div>
+  <div class="device-back screenshot-device">
+    <Image
+      src={finaraReport}
+      alt="Halaman Laporan asli Finara"
+      width={720}
+      height={1600}
+      widths={[250, 500, 720]}
+      sizes="(max-width: 760px) 235px, 250px"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="phone screenshot-device">
+    <Image
+      src={finaraHome}
+      alt="Halaman Home atau Riwayat asli Finara"
+      width={720}
+      height={1600}
+      widths={[258, 274, 500, 720]}
+      sizes="(max-width: 390px) 242px, (max-width: 760px) 258px, 274px"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+  <div class="float members">
+    <div class="float-title">Satu tujuan, bersama.</div>
+    <div class="avatars">
+      <span class="avatar">A</span>
+      <span class="avatar">M</span>
+      <span class="avatar">R</span>
+      <small>3 anggota</small>
+    </div>
+    <div class="float-caption">Workspace Keluarga Kita</div>
+  </div>
+  <div class="float report">
+    <div class="float-title">Pengeluaran lebih terlihat</div>
+    <div class="bars">
+      <i style="height:45%"></i>
+      <i style="height:72%"></i>
+      <i style="height:55%"></i>
+      <i style="height:90%"></i>
+      <i style="height:60%"></i>
+      <i style="height:36%"></i>
+      <i style="height:51%"></i>
+    </div>
+    <div class="float-caption">Kenali kebiasaan uangmu.</div>
+  </div>
+  <div class="preview-note">Screenshot mobile asli · Elemen pendamping berupa ilustrasi</div>
+</div>

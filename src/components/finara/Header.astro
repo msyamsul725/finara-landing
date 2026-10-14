@@ -1,0 +1,65 @@
+<header class="nav-shell">
+  <nav class="wrap" aria-label="Navigasi utama">
+    <a class="brand" href="/" aria-label="Finara, beranda">
+      <svg class="mark" aria-hidden="true"><use href="#logo"></use></svg>
+      Finara
+    </a>
+    <button
+      type="button"
+      class="menu"
+      data-nav-toggle
+      aria-label="Buka menu"
+      aria-expanded="false"
+      aria-controls="navigation">☰</button
+    >
+    <div class="nav-links" id="navigation">
+      <a href="#fitur">Fitur</a>
+      <a href="#bersama">Keuangan bersama</a>
+      <a href="#cara">Cara mulai</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn small" href="#download"
+        >Download Finara <span aria-hidden="true">↗</span></a
+      >
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initNavMenu() {
+    const menu = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+    const navigation = document.querySelector<HTMLElement>("#navigation");
+    if (!menu || !navigation) return;
+
+    const closeMenu = () => {
+      navigation.classList.remove("open");
+      menu.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-label", "Buka menu");
+    };
+
+    const openMenu = () => {
+      navigation.classList.add("open");
+      menu.setAttribute("aria-expanded", "true");
+      menu.setAttribute("aria-label", "Tutup menu");
+    };
+
+    menu.addEventListener("click", () => {
+      const isOpen = menu.getAttribute("aria-expanded") === "true";
+      if (isOpen) closeMenu();
+      else openMenu();
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.getAttribute("aria-expanded") === "true") {
+        closeMenu();
+        menu.focus();
+      }
+    });
+  }
+
+  initNavMenu();
+  document.addEventListener("astro:page-load", initNavMenu);
+</script>

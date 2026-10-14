@@ -1,0 +1,87 @@
+---
+import "@fontsource/sora/400.css";
+import "@fontsource/sora/500.css";
+import "@fontsource/sora/600.css";
+import "@fontsource/sora/700.css";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
+import "@fontsource/dm-sans/600.css";
+import "@fontsource/dm-sans/700.css";
+import "../styles/finara-legal.css";
+import IconSprite from "../components/finara/IconSprite.astro";
+import LegalHeader from "../components/legal/LegalHeader.astro";
+import LegalFooter from "../components/legal/LegalFooter.astro";
+import { site, SITE_URL } from "../config/site";
+
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbCurrent: string;
+  pageTitle: string;
+  intro: string;
+  eyebrow?: string;
+  metaPill?: string;
+  metaDate?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  breadcrumbCurrent,
+  pageTitle,
+  intro,
+  eyebrow = "Transparansi untuk kepercayaan",
+  metaPill = "Draf kebijakan",
+  metaDate = "Tanggal berlaku: belum ditetapkan",
+  noindex = true,
+} = Astro.props;
+
+const canonical = SITE_URL ? new URL(Astro.url.pathname, SITE_URL).href : undefined;
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="legal-page">
+    <IconSprite />
+    <a class="skip" href="#main">Lewati ke konten</a>
+    <LegalHeader />
+    <main id="main">
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <nav class="crumb" aria-label="Breadcrumb">
+            <a href="/">Beranda</a>
+            <span aria-hidden="true">/</span>
+            <span>{breadcrumbCurrent}</span>
+          </nav>
+          <div class="eyebrow">{eyebrow}</div>
+          <h1>{pageTitle}</h1>
+          <p class="intro">{intro}</p>
+          <div class="meta">
+            <span class="pill">{metaPill}</span>
+            <span>{metaDate}</span>
+          </div>
+        </div>
+      </section>
+      <div class="wrap">
+        <div class="legal-grid">
+          <slot name="sidebar" />
+          <article class="legal-article" aria-label={pageTitle}>
+            <slot />
+          </article>
+        </div>
+      </div>
+    </main>
+    <LegalFooter />
+    <script src="../scripts/legal-page.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+node_modules
+dist
+.astro
+.git
+.gitignore
+.cursor
+**/*.md
+docs
+reference
+finara-*-layout.html
+agent-transcripts

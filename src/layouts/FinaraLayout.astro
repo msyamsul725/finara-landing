@@ -1,0 +1,83 @@
+---
+import "@fontsource/sora/400.css";
+import "@fontsource/sora/500.css";
+import "@fontsource/sora/600.css";
+import "@fontsource/sora/700.css";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
+import "@fontsource/dm-sans/600.css";
+import "@fontsource/dm-sans/700.css";
+import "../styles/finara.css";
+import IconSprite from "../components/finara/IconSprite.astro";
+import { site, SITE_URL, storeLinks } from "../config/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = site.title, description = site.description } = Astro.props;
+const canonical = SITE_URL ? new URL(Astro.url.pathname, SITE_URL).href : undefined;
+const ogImage = SITE_URL ? new URL("/og-finara.png", SITE_URL).href : "/og-finara.png";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: site.name,
+  description: site.description,
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "iOS, Android",
+  downloadUrl: [storeLinks.appStore, storeLinks.googlePlay],
+};
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={site.locale} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <noscript>
+      <style>
+        @media (max-width: 760px) {
+          .menu {
+            display: none !important;
+          }
+          .nav-links {
+            display: flex !important;
+            position: static !important;
+            flex-direction: column;
+            padding: 0 0 16px !important;
+            border: 0 !important;
+            gap: 16px !important;
+          }
+        }
+      </style>
+    </noscript>
+  </head>
+  <body class="finara-page">
+    <IconSprite />
+    <a class="skip-link" href="#main">Lewati ke konten utama</a>
+    <slot name="header" />
+    <main id="main">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <script src="../scripts/landing.ts"></script>
+  </body>
+</html>

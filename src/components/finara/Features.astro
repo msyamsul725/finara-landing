@@ -1,0 +1,35 @@
+---
+import { features } from "../../data/landing";
+---
+
+<section class="block" id="fitur">
+  <div class="wrap">
+    <div class="heading-row">
+      <div class="section-head">
+        <div class="eyebrow">Lebih dekat dengan keuanganmu</div>
+        <h2>Uang keluar ke mana?<br />Sekarang lebih mudah tahu.</h2>
+        <p>
+          Bangun kebiasaan mencatat yang sederhana. Finara membantu merapikan angka agar kamu bisa
+          melihat gambaran besarnya.
+        </p>
+      </div>
+      <span class="mini-label">Sederhana untuk setiap hari.</span>
+    </div>
+    <div class="features">
+      {
+        features.map((feature) => (
+          <article class="feature">
+            <div class="icon">
+              <svg aria-hidden="true">
+                <use href={`#${feature.icon}`} />
+              </svg>
+            </div>
+            <h3>{feature.title}</h3>
+            <p>{feature.body}</p>
+            <div class="feature-foot">{feature.foot}</div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

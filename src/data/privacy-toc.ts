@@ -1,0 +1,15 @@
+export const privacyToc = [
+  { id: "privacy-1", num: "01", label: "Pendahuluan" },
+  { id: "privacy-2", num: "02", label: "Ruang lingkup" },
+  { id: "privacy-3", num: "03", label: "Data yang dikumpulkan" },
+  { id: "privacy-4", num: "04", label: "Cara kami menggunakan data" },
+  { id: "privacy-5", num: "05", label: "Dasar pemrosesan" },
+  { id: "privacy-6", num: "06", label: "Penyimpanan dan retensi" },
+  { id: "privacy-7", num: "07", label: "Keamanan" },
+  { id: "privacy-8", num: "08", label: "Berbagi dengan pihak ketiga" },
+  { id: "privacy-9", num: "09", label: "Hak Anda" },
+  { id: "privacy-10", num: "10", label: "Anak-anak" },
+  { id: "privacy-11", num: "11", label: "Transfer internasional" },
+  { id: "privacy-12", num: "12", label: "Perubahan kebijakan" },
+  { id: "privacy-13", num: "13", label: "Hubungi kami" },
+] as const;
