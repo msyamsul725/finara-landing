@@ -31,7 +31,7 @@ Harus ada: `dist/index.html`, `dist/privacy/index.html`, `dist/terms/index.html`
 
 | Field | Value |
 |-------|--------|
-| Root directory | *(kosong)* |
+| Path / Root directory | **`/`** (default — `package.json` di root repo) |
 | Build command | `npm run build` |
 | Build output directory | `dist` |
 
