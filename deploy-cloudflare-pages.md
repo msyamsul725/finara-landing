@@ -40,10 +40,11 @@ Harus ada di `dist/`: `index.html`, `privacy/index.html`, `terms/index.html`, `s
 
 | Field | Value |
 |-------|--------|
-| Path / Root directory | **`/`** (default — `package.json` di root repo) |
+| Path / Root directory | **`/`** (default) |
 | Build command | `npm run build` |
 | Preview command | `npx wrangler preview` |
-| Build output directory | `dist` |
+
+**Build output directory:** tidak perlu diisi — biarkan default preset **Astro** (Cloudflare otomatis pakai `dist`).
 
 6. **Environment variables** (Production + Preview):
 
@@ -116,7 +117,7 @@ git push origin main
 
 ### Yang jarang perlu diubah lagi
 
-- Build command / output directory (kecuali migrasi framework).
+- Build / preview command (kecuali migrasi framework).
 - DNS (kecuali pindah host atau ganti subdomain).
 - **`public/_redirects`** — sudah atur www → apex; jangan hapus kecuali sengaja.
 
