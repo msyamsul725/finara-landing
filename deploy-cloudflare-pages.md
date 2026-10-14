@@ -2,7 +2,7 @@
 
 **Domain produksi (canonical):** https://finara.co.id  
 **Redirect:** `www.finara.co.id` → `https://finara.co.id` (301, path + query) via `public/_redirects`  
-**Repo:** https://github.com/CloudnowDevelopment/finara-landing.git  
+**Repo:** https://github.com/msyamsul725/finara-landing.git  
 **Branch produksi:** `main`
 
 Proyek ini **static Astro** (output `dist/`), **npm** + `package-lock.json` (bukan pnpm).
@@ -24,7 +24,7 @@ Harus ada: `dist/index.html`, `dist/privacy/index.html`, `dist/terms/index.html`
 ## Cloudflare Pages — buat proyek
 
 1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-2. GitHub → org **CloudnowDevelopment** → repo **finara-landing**.
+2. GitHub → akun **msyamsul725** → repo **finara-landing**.
 3. **Production branch:** `main`
 4. **Framework preset:** Astro
 5. **Build settings** (sesuaikan — repo memakai **npm**, bukan pnpm):
