@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        SITE_URL: ${SITE_URL:-}
+        SITE_URL: ${SITE_URL:-https://www.finara.co.id}
     ports:
       - "8080:80"
     restart: unless-stopped

@@ -1,17 +1,14 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-const site = process.env.SITE_URL;
+const site = process.env.SITE_URL ?? "https://www.finara.co.id";
 
 // https://astro.build/config
 export default defineConfig({
-  ...(site ? { site } : {}),
+  site,
   integrations: [
     sitemap({
-      filter: (page) => {
-        if (!site) return false;
-        return page === `${site}/` || page === site;
-      },
+      filter: (page) => page.startsWith(site.replace(/\/$/, "")),
     }),
   ],
 });

@@ -23,7 +23,7 @@ Privasi data pelanggan (pengguna) adalah prioritas kami. **Catatan dan total keu
 | **Surel privasi & dukungan** | digital@cloudnow.co.id |
 | **Telepon** | +62 816-676-515 |
 | **Kontak pengembang (alternatif)** | donaltam@cloudnow.co.id |
-| **Situs web** | URL situs resmi Finara (halaman kebijakan privasi / beranda) |
+| **Situs web** | https://www.finara.co.id/ |
 
 ---
 

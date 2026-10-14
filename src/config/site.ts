@@ -1,5 +1,9 @@
-/** Production URL — set when domain is available (e.g. https://finara.app). */
-export const SITE_URL = import.meta.env.SITE_URL ?? undefined;
+/** Canonical production origin (no trailing slash). */
+export const PRODUCTION_SITE_ORIGIN = "https://www.finara.co.id" as const;
+
+/** Override at build with `SITE_URL` (Docker `.env`, CI, local). */
+export const SITE_URL =
+  (import.meta.env.SITE_URL as string | undefined) ?? PRODUCTION_SITE_ORIGIN;
 
 export const site = {
   name: "Finara",
